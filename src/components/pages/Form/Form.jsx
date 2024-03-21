@@ -1,13 +1,16 @@
 import { Button, Grid, TextField, Typography } from "@mui/material"
 import "./Form.css"
+import { useState } from "react"
 
 const Form = () => {
+    const [name, setName] = useState()
+    
     return(
         <div>
-            <Typography color="primary" variant="h2" align="center">
+            <Typography color="primary" variant="h2" align="center" m={4}>
                 Register form
             </Typography>
-            
+
             <form className="form-container">
                 <Grid 
                     container 
@@ -22,7 +25,8 @@ const Form = () => {
                             type="text" 
                             label="Name" 
                             variant="outlined"
-                            fullWidth />
+                            fullWidth
+                            onChange={ e => setName(e.target.value) } />
                     </Grid>
 
                     <Grid item xs={12} md={7}>
